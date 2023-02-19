@@ -1,23 +1,33 @@
 * {
   background-color: darkseagreen;
+  font-family: monospace;
 }
 
 h1 {
   text-align: center;
+  margin-top: 3em;
+  font-size: 3.5em;
 }
 
 h3 {
   text-align: center;
+  font-size: 2em;
 }
 
 .row {
   display: flex;
   justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
 }
 
 .square {
+  text-align: center;
+  font-size: 1.5em;
   padding: 1em;
   border: solid 2px black;
-  width: 1em;
-  height: 1em;
+  width: 2em;
+  height: 2em;
+  background-color: rgb(118, 118, 234);
 }
