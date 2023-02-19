@@ -1,25 +1,29 @@
 * {
   background-color: darkseagreen;
-  font-family: monospace;
+  /* font-family: monospace; */
+  font-family: 'Press Start 2P', cursive;
+}
+
+#game {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 h1 {
   text-align: center;
-  margin-top: 3em;
-  font-size: 3.5em;
+  margin-top: 1.5em;
+  font-size: 2.8em;
 }
 
 h3 {
   text-align: center;
-  font-size: 2em;
+  font-size: 1.8em;
 }
 
 .row {
   display: flex;
   justify-content: center;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
 }
 
 .square {
@@ -30,4 +34,11 @@ h3 {
   width: 2em;
   height: 2em;
   background-color: rgb(118, 118, 234);
+}
+
+#reset {
+  margin: 2em;
+  padding: 0.5em;
+  font-size: 1.5em;
+  border: solid 0.2em black;
 }
