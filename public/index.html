@@ -10,7 +10,8 @@
   </head>
   <body>
     <h1>TIC TAC TOE</h1>
-    <h3 class="next-player">Next Player: X</h3>
+    <h3 id="next"></h3>
+    <h3 id="winner"></h3>
     <div class="row">
       <div class="square"></div>
       <div class="square"></div>
@@ -26,5 +27,60 @@
       <div class="square"></div>
       <div class="square"></div>
     </div>
+    <script>
+      const board = document.getElementsByClassName('square');
+      let next = document.getElementById('next');
+      let winner = document.getElementById('winner');
+
+      const getWinner = () => {
+        const lines = [
+          [0, 1, 2],
+          [3, 4, 5],
+          [6, 7, 8],
+          [0, 4, 8],
+          [1, 4, 7],
+          [2, 4, 6],
+        ];
+        for (let i = 0; i < lines.length; i++) {
+          if (
+            board[lines[i][0]].innerHTML === 'X' &&
+            board[lines[i][1]].innerHTML === 'X' &&
+            board[lines[i][2]].innerHTML === 'X'
+          ) {
+            return 'Winner: X';
+          } else if (
+            board[lines[i][0]].innerHTML === 'O' &&
+            board[lines[i][1]].innerHTML === 'O' &&
+            board[lines[i][2]].innerHTML === 'O'
+          ) {
+            return 'Winner: O';
+          }
+        }
+      };
+
+      let x = true;
+      next.innerHTML = 'Next player: X';
+      winner.innerHTML = 'Winner: ';
+
+      for (let i = 0; i < 9; i++) {
+        board[i].addEventListener('click', (evt) => {
+          if (board[i].innerHTML || getWinner()) {
+            winner.innerHTML = getWinner();
+            return;
+          }
+          if (x) {
+            board[i].innerHTML = 'X';
+            x = !x;
+            winner.innerHTML = getWinner() || 'Winner: ';
+            next.innerHTML = 'Next player: O';
+          } else {
+            board[i].innerHTML = 'O';
+            x = !x;
+            winner.innerHTML = getWinner() || 'Winner: ';
+            next.innerHTML = 'Next player: X';
+          }
+        });
+      }
+    </script>
   </body>
 </html>
