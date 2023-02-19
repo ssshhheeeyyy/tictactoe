@@ -1,0 +1,21 @@
+* {
+  background-color: darkseagreen;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.square {
+  padding: 1em;
+  border: solid 1px black;
+}
